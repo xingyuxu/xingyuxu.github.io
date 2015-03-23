@@ -101,7 +101,7 @@ double：10位有效数字
         <section id="main"><article id="post-C++" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/23/C++/" class="article-date">
-  <time datetime="2015-03-23T14:16:31.968Z" itemprop="datePublished">2015-03-23</time>
+  <time datetime="2015-03-23T14:23:47.847Z" itemprop="datePublished">2015-03-23</time>
 </a>
     
   </div>
@@ -146,15 +146,18 @@ prog1.cc
 <h4 id="2-_类类型变量的初始化">2. 类类型变量的初始化</h4><p>大多数类都提供了默认构造函数，如果类具有默认构造函数，那么就可以在定义该类的变量时不用显式地初始化变量。有些类类型没有默认构造函数。那么，每个定义都必须提供显式的初始化，没有初始值是根本不可能定义这种类型的变量的。</p>
 <h3 id="声明和定义">声明和定义</h3><ul>
 <li><strong>声明</strong>用于向程序表明变量的类型和名字。</li>
-<li><strong>定义</strong>也是声明。</li>
+<li><strong>定义</strong>也是声明，并且会分配存储空间。</li>
 <li><code>extern</code>声明不是定义，也不分配存储空间。它只是说明变量定义在程序的其他地方。</li>
 <li>程序中变量可<strong>声明多次</strong>，但只能<strong>定义一次</strong>。</li>
+<li><p>如果声明有初始化式，那么他也可被当作是定义，即使标记为<code>extern</code>。</p>
+<p>  extern double pi=3.1416； //定义</p>
+</li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/23/C++/" data-id="ci7lyis1n0000pooqae6dn2h5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/23/C++/" data-id="ci7lz0jaz00000soqr7gi4g5t" class="article-share-link">Share</a>
       
       
     </footer>
