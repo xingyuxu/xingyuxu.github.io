@@ -101,7 +101,7 @@ double：10位有效数字
         <section id="main"><article id="post-C++" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/23/C++/" class="article-date">
-  <time datetime="2015-03-23T14:36:41.071Z" itemprop="datePublished">2015-03-23</time>
+  <time datetime="2015-03-23T14:53:15.287Z" itemprop="datePublished">2015-03-23</time>
 </a>
     
   </div>
@@ -149,13 +149,28 @@ prog1.cc
 <li><strong>定义</strong>也是声明，并且会分配存储空间。</li>
 <li><code>extern</code>声明不是定义，也不分配存储空间。它只是说明变量定义在程序的其他地方。</li>
 <li>程序中变量可<strong>声明多次</strong>，但只能<strong>定义一次</strong>。</li>
-<li>如果声明有初始化式，那么他也可被当作是定义，即使标记为<code>extern</code>。<h4 id="#">#</h4>  extern double pi=3.1416; //定义</li>
+<li><p>如果声明有初始化式，那么他也可被当作是定义，即使标记为<code>extern</code>。</p>
+<p>  <code>extern double pi=3.1416; //定义</code></p>
+</li>
 </ul>
-<h2 id="#-1">#</h2>
+<h3 id="const限制符"><strong>const</strong>限制符</h3><ul>
+<li>在全局作用域定义非<code>const</code>变量时，它在整个程序中都是可以访问的。</li>
+<li>在全局作用域声明的<code>const</code>变量是定义在该对象的文件的局部变量。</li>
+<li><p>通过指定<code>const</code>变更为<code>extern</code>，就可以在整个程序中访问const对象。</p>
+<pre><code><span class="comment">//file1.cc</span>
+<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keyword">int</span> bufSize=fcn();
+<span class="comment">//file2.cc</span>
+<span class="keyword">extern</span> <span class="keyword">const</span> <span class="keyword">int</span> bufSize;
+<span class="keyword">for</span>(<span class="keyword">int</span> index=<span class="number">0</span>; index!=bufSize; ++index)
+    <span class="comment">//...</span>
+</code></pre><p>  <strong><strong>非const变量默认是extern，要是const变量也能够在其他文件中访问，必须指定它为extern。</strong></strong></p>
+<h3 id="引用">引用</h3></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/23/C++/" data-id="ci7lz8o5s00005koqjq4hfwww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/23/C++/" data-id="ci7lztx9v00009woqvlza69p9" class="article-share-link">Share</a>
       
       
     </footer>
