@@ -64,7 +64,7 @@
     <article id="post-OpenCL_1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/04/30/OpenCL_1/" class="article-date">
-  <time datetime="2015-04-30T08:24:12.318Z" itemprop="datePublished">2015-04-30</time>
+  <time datetime="2015-04-30T08:26:39.292Z" itemprop="datePublished">2015-04-30</time>
 </a>
     
   </div>
@@ -83,7 +83,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="1-_Discover_and_initialize_the_platforms-">1. Discover and initialize the platforms.</h4><p>调用两次clGetPlatformIDs函数，第一次获取可用的平台数量，第二次获取一个可用的平台。</p>
+        <pre><code>以下内容转载自 <span class="string">http:</span><span class="comment">//tech.ddvip.com/2014-03/1394105260208952.html</span>
+</code></pre><h4 id="1-_Discover_and_initialize_the_platforms-">1. Discover and initialize the platforms.</h4><p>调用两次clGetPlatformIDs函数，第一次获取可用的平台数量，第二次获取一个可用的平台。</p>
 <h4 id="2-_Discover_and_initialize_the_devices-">2. Discover and initialize the devices.</h4><p>调用两次clGetDeviceIDs函数，第一次获取可用的设备数量，第二次获取一个可用的设备。</p>
 <h4 id="3-_Create_a_context(调用clCreateContext函数)">3. Create  a context(调用clCreateContext函数)</h4><p>上下文context可能会管理多个设备device。</p>
 <h4 id="4-_Create_a_command_queue(调用clCreateCommandQueue函数）">4. Create a command queue(调用clCreateCommandQueue函数）</h4><p>一个设备device对应一个command queue。<br>上下文conetxt将命令发送到设备对应的command queue，设备就可以执行命令队列里的命令。</p>
@@ -92,7 +93,7 @@
 <h4 id="8-_Create_the_kernel(调用clCreateKernel函数）">8. Create the kernel(调用clCreateKernel函数）</h4><p>根据你的程序对象，生成kernel对象，表示设备程序的入口。</p>
 <h4 id="9-_Set_the_kernel_arguments(调用clSetKernelArg函数）">9.    Set the kernel arguments(调用clSetKernelArg函数）</h4><h4 id="10-_Configure_the_work-item_structure(设置worksize）">10. Configure the work-item structure(设置worksize）</h4><p>配置work-item的组织形式（维数，group组成等）</p>
 <h4 id="11-_Enqueue_the_kernel_for_execution(调用clEnqueueNDRangeKernel函数）">11. Enqueue the kernel for execution(调用clEnqueueNDRangeKernel函数）</h4><p>将kernel对象，以及 work-item参数放入命令队列中进行执行。</p>
-<h4 id="12-_Read_the_output_buffer_back_to_the_host(调用clEnqueueReadBuffer函数）">12. Read  the output buffer back to the host(调用clEnqueueReadBuffer函数）</h4><h4 id="13-_Release_OpenCL_resources（至此结束整个运行过程）">13. Release OpenCL resources（至此结束整个运行过程）</h4><h4 id="14-_Compile">14. Compile</h4><p>g++ -I /usr/include -o A *.cpp -lOpenCL<br>/usr/include是CL所在的目录</p>
+<h4 id="12-_Read_the_output_buffer_back_to_the_host(调用clEnqueueReadBuffer函数）">12. Read  the output buffer back to the host(调用clEnqueueReadBuffer函数）</h4><h4 id="13-_Release_OpenCL_resources（至此结束整个运行过程）">13. Release OpenCL resources（至此结束整个运行过程）</h4><h4 id="14-_Compile">14. Compile</h4><p>g++ -I /usr/include -o A *.cpp -lOpenCL<br>/usr/include是CL头文件所在的目录</p>
 
       
     </div>
