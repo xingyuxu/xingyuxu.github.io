@@ -61,6 +61,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-OpenCL_1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/30/OpenCL_1/" class="article-date">
+  <time datetime="2015-04-30T08:20:08.411Z" itemprop="datePublished">2015-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/30/OpenCL_1/">OpenCL学习（1）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="OpenCL的编程步骤">OpenCL的编程步骤</h2><h4 id="1-_Discover_and_initialize_the_platforms-">1. Discover and initialize the platforms.</h4><pre><code>调用两次clGetPlatformIDs函数，第一次获取可用的平台数量，第二次获取一个可用的平台。
+</code></pre><h4 id="2-_Discover_and_initialize_the_devices-">2. Discover and initialize the devices.</h4><pre><code>调用两次clGetDeviceIDs函数，第一次获取可用的设备数量，第二次获取一个可用的设备。
+</code></pre><h4 id="3-_Create_a_context(调用clCreateContext函数)">3. Create  a context(调用clCreateContext函数)</h4><pre><code>上下文<span class="literal">context</span>可能会管理多个设备<span class="literal">device</span>。
+</code></pre><h4 id="4-_Create_a_command_queue(调用clCreateCommandQueue函数）">4. Create a command queue(调用clCreateCommandQueue函数）</h4><pre><code>一个设备device对应一个<span class="command"><span class="keyword">command</span> <span class="title">queue</span>。</span>
+上下文conetxt将命令发送到设备对应的<span class="command"><span class="keyword">command</span> <span class="title">queue</span>，设备就可以执行命令队列里的命令。</span>
+</code></pre><h4 id="5-_Create_device_buffers(调用clCreateBuffer函数）">5. Create device buffers(调用clCreateBuffer函数）</h4><pre><code><span class="keyword">Buffer</span>中保存的是数据对象，就是设备执行程序需要的数据保存在其中。
+<span class="keyword">Buffer</span>由上下文conetxt创建，这样上下文管理的多个设备就会共享<span class="keyword">Buffer</span>中的数据。
+</code></pre><h4 id="6-_Write_host_data_to_device_buffers(调用clEnqueueWriteBuffer函数）">6. Write host data to device buffers(调用clEnqueueWriteBuffer函数）</h4><h4 id="7-_Create_and_compile_the_program">7. Create and compile the program</h4><pre><code>创建程序对象，程序对象就代表你的程序源文件或者二进制代码数据。
+</code></pre><h4 id="8-_Create_the_kernel(调用clCreateKernel函数）">8. Create the kernel(调用clCreateKernel函数）</h4><pre><code>根据你的程序对象，生成<span class="built_in">kernel</span>对象，表示设备程序的入口。
+</code></pre><h4 id="9-_Set_the_kernel_arguments(调用clSetKernelArg函数）">9.    Set the kernel arguments(调用clSetKernelArg函数）</h4><h4 id="10-_Configure_the_work-item_structure(设置worksize）">10. Configure the work-item structure(设置worksize）</h4><pre><code>配置work-<span class="property">item</span>的组织形式（维数，group组成等）
+</code></pre><h4 id="11-_Enqueue_the_kernel_for_execution(调用clEnqueueNDRangeKernel函数）">11. Enqueue the kernel for execution(调用clEnqueueNDRangeKernel函数）</h4><pre><code>将kernel对象，以及 work-<span class="property">item</span>参数放入命令队列中进行执行。
+</code></pre><h4 id="12-_Read_the_output_buffer_back_to_the_host(调用clEnqueueReadBuffer函数）">12. Read  the output buffer back to the host(调用clEnqueueReadBuffer函数）</h4><h4 id="13-_Release_OpenCL_resources（至此结束整个运行过程）">13. Release OpenCL resources（至此结束整个运行过程）</h4><h4 id="14-_Compile">14. Compile</h4><pre><code><span class="keyword">g</span>++ -I /usr/<span class="keyword">include</span> -o A *.cpp -lOpenCL
+/usr/<span class="keyword">include</span>是<span class="keyword">CL</span>所在的目录
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/30/OpenCL_1/" data-id="ci93wkc6y0002rsoqzelma1r7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-C++" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/23/C++/" class="article-date">
@@ -133,7 +182,7 @@ prog1.cc
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/23/C++/" data-id="ci8e1akid0000tgoqqncekfvr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/23/C++/" data-id="ci93wkbww0000rsoqth978xih" class="article-share-link">Share</a>
       
       
     </footer>
@@ -187,7 +236,7 @@ prog1.cc
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/21/alibaba/" data-id="ci8e1akki0001tgoqssa73392" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/21/alibaba/" data-id="ci93wkc6f0001rsoqch3evoj6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -212,7 +261,7 @@ prog1.cc
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -222,6 +271,10 @@ prog1.cc
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/04/30/OpenCL_1/">OpenCL学习（1）</a>
+          </li>
         
           <li>
             <a href="/2015/03/23/C++/">C++ primer--变量和基本类型</a>
